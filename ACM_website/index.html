@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="icon" href="img/acm_logo.png" type="image/gif" sizes="16x16">
     <title>ACM Student chapter MITS | MITSCSE</title>
 
     <!-- Bootstrap core CSS -->
@@ -15,6 +15,7 @@
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
@@ -28,16 +29,101 @@
       {
         background-color: gray;
       }
+      .image:hover{
+        box-shadow: 1px 3px 38px hsla(202, 98%, 50%, 0.877);
+      }
     </style>
+    <style>
+        @media screen and (min-width: 700px) {
+        .a {
+          display: inline-block;
+          width:45%;
+          }
+        }
+        @media screen and (max-width: 700px) {
+        .b {
+          display: inline-block;
+          width:95%;
+          }
+        }
+        .know_btn:hover{
+          background-color: white;
+        }
+
+        [tooltip]:before {
+    /* needed - do not touch */
+    content: attr(tooltip);
+    position: absolute;
+    opacity: 0;
+    
+    /* customizable */
+    transition: all 0.15s ease;
+    padding: 10px;
+    color: #333;
+    border-radius: 10px;    
+}
+
+[tooltip]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+    
+    /* customizable */
+    width:60%;
+    z-index:190909;
+    background: rgba(141, 141, 134, 0.801);
+    margin-top: 0px;
+    margin-left: -30px;    
+}
+
+[tooltip]:not([tooltip-persistent]):before {
+    pointer-events: none;
+}
+
+
+        [tooltip1]:before {
+    /* needed - do not touch */
+    content: attr(tooltip1);
+    position: absolute;
+    opacity: 0;
+    
+    /* customizable */
+    transition: all 0.15s ease;
+    padding: 10px;
+    color: #333;
+    border-radius: 10px;    
+}
+
+[tooltip1]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+    
+    /* customizable */
+    width:60%;
+    z-index:190909;
+    background: rgba(141, 141, 134, 0.801);
+    margin-top: 0px;
+    margin-left: 0px;    
+}
+
+[tooltip1]:not([tooltip1-persistent]):before {
+    pointer-events: none;
+}
+
+
+#loading {background-position-x: middle;background-color: #2a2826;background-position-y: middle;width: 100%;height: 100%;top: 0px;left: 0px;position: fixed;display: block; z-index: 999090909090909090900909;}
+
+#loading-image {background-position-x: middle;background-position-y: middle;position:fixed;top:20%;left: 33%;} 
+
+      </style>
     <SCRIPT type="text/javascript">
 
       var quotations = new Array()
       
-          quotations[0]= "Make slidewshows with text in minutes."
+          quotations[0]= "<span style='color:white'>Hour of Code</span>"
       
-          quotations[1]= "Add animated texts and hyperlink is available."
+          quotations[1]= "<span style='color:white'>Blockchain workshops</span>"
       
-          quotations[2]= "Add captions and descriptions to photos."
+          quotations[2]= "<span style='color:white'>Fun Events</span>"
       
       function display()
       
@@ -49,15 +135,26 @@
       
       </SCRIPT>
   </head>
-
+ 
   <body id="page-top" style="width: 100%;height:100%;background-image: url('img/MITS_bg.jpg')">
-
+    
+    <div id="loading">
+        <img id="loading-image" style="height:60%;width:30%;" src="loader.gif" alt="Loading..." />
+        </div>
+        <script>
+            setTimeout(loader,2000);
+            function loader()
+            {
+              document.getElementById('loading').style.display="none";
+            }
+          </script>
     <!-- Navigation -->
+    <div id="total">
     <b><div id="quotation" style="background-color:#8b8b8b00;color:white; width: 100%; height: 40px;position:absolute;top:12%; padding: 15px 0 0 5px;text-align:center;">
       
       <SCRIPT type="text/javascript">display()</SCRIPT>
     </div></b>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="position:fixed;" id="mainNav">
+    <nav style="z-index: 6323526357" class="navbar navbar-expand-lg navbar-light fixed-top" style="position:fixed;" id="mainNav">
       <div class="container" style="width: 100%;height:100%;padding-left:0;">
           <a href="#" class="navbar-brand js-scroll-trigger" href="#page-top"><img  style="margin:10px;height:50px;width:50px" src="img/acm_logo.png"></a>
         <a href="#" class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/mits_logo.png"></a>
@@ -70,10 +167,10 @@
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+              <a class="nav-link js-scroll-trigger" href="#team">Our team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Gallery</a>
+              <a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -83,16 +180,16 @@
       </div>
     </nav>
 
-    <header style="background-image: url('img/MITS_bg.jpg')" class="masthead text-center text-white d-flex">
+    <header style="background-repeat: no-repeat;background-image: url('img/MITS_bg.jpg')" class="masthead text-center text-white d-flex">
       
       <div class="container my-auto">
         <div class="row">
-          <div class="col-lg-10 mx-auto">
+          <div style="margin-top:100px;" class="col-lg-10 mx-auto">
             <h1 class="text-uppercase" style="color:rgba(61, 137, 252, 0.904)">
               <strong>#mitsacm</strong>
             </h1>
-            <h3 class="text-uppercase" style="font-size:30px"><b>Campus ACM student Chapter</b></h3>
-            <hr>
+            <h3 class="text-uppercase" style="font-size:2em"><b>Campus ACM student Chapter</b></h3>
+            <hr style='background-position-x: middle;margin-left:47%'>
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">Advancing Computing as a Science and Profession</p>
@@ -103,63 +200,107 @@
       
     </header>
 
-    <section class="bg-primary" id="about">
-      <div class="container">
+    <section  id="about" style="background-image: url('img/library.jpg');background-size: cover;background-repeat: no-repeat;">
+      <div style="width:100%;height:100%;margin-top:0;">
+      <div   class="container">
         <div class="row">
+          <div class="a b" style="display:inline-block;padding-top: 20px;margin:20px;border-radius:10px;background-color: #455255d8;">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">About ACM</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Know More</a>
+            <h2 class="section-heading" style="color:white;"><b>About MITS</b></h2>
+            <hr style='background-position-x: middle;margin-left:47%'>
+            <p class="text-faded mb-4">Muthoot Institute of Technology and Science (MITS) which is located at Puthencruz Ernakulam is promoted by Muthoot M George.It was established with the aim of providing better education to the students as well as to concrete the young minds with the intention to build up our nation.</p>
+            
+          </div>
+          </div>
+          <div class="a b" style="display:inline-block;padding-top: 20px;margin:20px;border-radius:10px;background-color: #455255d8;">
+              <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading"  style="color:rgb(255, 255, 255);"><b>About ACM</b></h2>
+                <hr style='background-position-x: middle;margin-left:47%'>
+                <p class="text-faded mb-4">ACM members actively conduct programmes to accomplish the mission and vision of the Computer Science Department and to bring others to our perspective. This association provides additional information to the students through talks and other activities.</p>
+                
+              </div>
           </div>
         </div>
+          <p style="text-align: center;"><div style="text-align:center;">
+          <a style="background-color: #e24252e8; color:white" id="know_btn" class="btn btn-light btn-xl" href="#team">Know More</a>
+          </div></p>        
+      </div>
       </div>
     </section>
 
-    <section id="services">
+    <section id="team">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">At Your Service</h2>
-            <hr class="my-4">
+            <h2 style="color:white;" class="section-heading">Office Bearers</h2>
+            <hr style='background-position-x: middle;margin-left:47%'>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
+            <div style="COLOR:WHITE;" tooltip="HOD MITSCSE" class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <img class="image" src="img/bearers/ananth.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+                  <h5 style="margin-top:15px;" class="mb-3">Anand Hareendran</h5>
+                  <h6 style="margin-top:5px;color:silver;" class="mb-3">HOD CSE</h6>
+                </div>
+              </div>
+            <div style="COLOR:WHITE;" tooltip="Assistant professor MITS" class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <img class="image" src="img/bearers/bineeth.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+                  <h5 style="margin-top:15px;" class="mb-3">Bineeth Kuriakose</h5>
+                  <h6 style="margin-top:5px;color:silver;" class="mb-3">Faculty Incharge</h6>
+                </div>
+              </div>
+          <div style="COLOR:WHITE;" tooltip="Student MITS"  class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Sturdy Templates</h3>
-              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+                <img class="image" src="img/bearers/aswin.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+              <h5 style="margin-top:15px;" class="mb-3">A V Aswin</h5>
+              <h6 style="margin-top:5px;color:silver;" class="mb-3">Chairperson</h6>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 text-center">
+          <div style="COLOR:WHITE;" tooltip1="Student MITS" class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Ready to Ship</h3>
-              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+                <img class="image" src="img/bearers/gopika.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+              <h5 style="margin-top:15px;" class="mb-3">Gopika CK</h5>
+              <h6 style="margin-top:5px;color:silver;" class="mb-3">Vice chair</h6>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 text-center">
+          <div style="COLOR:WHITE;" tooltip="Student MITS" class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Up to Date</h3>
-              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+                <img class="image" tooltip="Student MITS" src="img/bearers/vimal.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+              <h5 style="margin-top:15px;" class="mb-3">Vimal P Viswan</h5>
+              <h6 style="margin-top:5px;color:silver;" class="mb-3">Webmaster</h6>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Made with Love</h3>
-              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
             </div>
-          </div>
+            <div style="COLOR:WHITE;" tooltip="Student MITS" class="col-lg-3 col-md-6 text-center">
+                <div class="service-box mt-5 mx-auto">
+                    <img class="image" src="img/bearers/merin.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+                  <h5 style="margin-top:15px;" class="mb-3">Merin Joseph</h5>
+                  <h6 style="margin-top:5px;color:silver;" class="mb-3">Secretary</h6>
+                </div>
+              </div>
+            <div style="COLOR:WHITE;" tooltip="Student MITS" class="col-lg-3 col-md-6 text-center">
+              <div class="service-box mt-5 mx-auto">
+                  <img class="image" src="img/bearers/sreelakshmi.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+                <h5 style="margin-top:15px;" class="mb-3">Sreelakshmi S K</h5>
+                <h6 style="margin-top:5px;color:silver;" class="mb-3">Joint Secretary</h6>
+              </div>
+            </div>
+            <div style="COLOR:WHITE;" tooltip="Student MITS" class="col-lg-3 col-md-6 text-center">
+              <div class="service-box mt-5 mx-auto">
+                  <img class="image" src="img/bearers/albyn.jpg" style="width:200px;height:200px;border-radius: 50%;border: 4px solid rgb(0, 162, 255);">
+                <h5 style="margin-top:15px;" class="mb-3">Albyn Babu</h5>
+                <h6 style="margin-top:5px;color:silver;" class="mb-3">Treasurer</h6>
+              </div>
+            </div>
+            
         </div>
       </div>
     </section>
 
-    <section class="p-0" id="portfolio">
+    <section class="p-0" id="gallery">
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6">
@@ -231,7 +372,7 @@
                     OCULTACION
                   </div>
                   <div style="font-size:16px;" class="project-name">
-                    On 3rd April Tuesday 2018
+                    Fun event conducted on 3rd April Tuesday 2018
                   </div>
                 </div>
               </div>
@@ -258,35 +399,46 @@
 
     <section class="bg-dark text-white">
       <div class="container text-center">
-        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
+        <h2 class="mb-4">Download our brochure</h2>
+        <a class="btn btn-light btn-xl sr-button" href="http://mealbynbabu.me/brochure/brochure.pdf">Brochure</a>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="background-image:url('img/contact.jpg');background-repeat: no-repeat;background-size: cover;background-position-x:center;background-position-y:middle;">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Let's Get In Touch!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+            <h2 class="section-heading" style="color:#dc3545c9;margin-top:-7%;">Feel free to contact</h2>
+            <hr style='background-position-x: middle;margin-left:47%'>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
-            <p>123-456-6789</p>
+          <div class="col-lg-4 ml-auto text-center" style="color:silver;">
+              <i style="color:silver;" class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+              <a href="https://api.whatsapp.com/send?phone=919746354664&text=" style="color:white"><p>Aswin :+91-9746354664</p></a>
+            <a href="https://api.whatsapp.com/send?phone=917902819689&text=" style="color:white">
+              <p>Gopika :+91-7902819689</p></a>
+              <a href="https://api.whatsapp.com/send?phone=919400233025&text=" style="color:white">
+                <p>Vimal :+91-9400233025</p></a>
           </div>
           <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+              <i class="fa fa-envelope-o fa-3x mb-3 sr-contact" style="color:silver"></i>
             <p>
-              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
-            </p>
+                <a href="mailto://aswinavofficial@acm.org" style="color:white">aswinavofficial@acm.org</a></p>
+                <p><a href="mailto://gopikamalavika@gmail.com" style="color:white">gopikamalavika@gmail.com</a></p>
+                <p><a href="mailto://vimal974ever@acm.org" style="color:white">vimal974ever@acm.org</a></p>
+            
           </div>
         </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.6396675522046!2d76.40619621425111!3d9.963907576389825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0874de563bc58b%3A0xde7ecbfa110cfbda!2sMuthoot+Institute+of+Technology+%26+Science!5e0!3m2!1sen!2sin!4v1532281459189" width="100%" height="400" frameborder="0" style="border:0;margin-top:6%;" allowfullscreen></iframe>
+      
       </div>
+      
     </section>
-
+    <footer style="width:100%;height:120px;background-color:#292c33;position:relative;bottom:0;padding:20px;text-align:center;color:white">
+        <h5 style="">Designed with <span style="color:red;">&#x2764</span> by <b><a href="https://iamvimal.me">Vimal</a></b></h5>
+        <span><a href="https://www.facebook.com/vimal974ever" style="color:silver;"><i class="fa fa-facebook-square"></i></a></span><span> </span><span> </span> | <span> </span><span> </span><span><a href="https://github.com/vimal97"  style="color:silver;"><i class="fa fa-github"></i></span>
+      </footer>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -298,7 +450,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-
+</div>
   </body>
 
 </html>
